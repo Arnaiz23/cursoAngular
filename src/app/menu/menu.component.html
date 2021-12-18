@@ -2,4 +2,8 @@
     <li><span> </span></li>
     <li routerLink="/listado"><span>Blog</span></li>
     <li routerLink="/nosotros"><span>Acerca de</span></li>
+    <!-- Si no estoy logeado muestra Acceso -->
+    <li id="acceso" *ngIf="miToken == 0" class="acceso" routerLink="/login"><span>Acceso</span></li>
+    <!-- Si esoty logeado mostrara mi usuario -->
+    <li id="acceso" *ngIf="miToken != 0" class="acceso" (click)="logout()"><span><strong>Usuario:</strong> {{ nombreUsuario }}</span></li>
   </ul>
